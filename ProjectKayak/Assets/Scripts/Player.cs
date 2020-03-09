@@ -23,43 +23,38 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(Input.GetKeyDown(KeyCode.UpArrow))
-        // {
-        //     animator.Play("row_right");
-        //     animator.Play("row_left");
-
-        //     animator.SetBool("StopPaddle_Left", false);
-        //     animator.SetBool("StopPaddle_Right", false);
-        // }
-        // else if(Input.GetKeyUp(KeyCode.UpArrow))
-        // {
-        //     animator.SetBool("StopPaddle_Left", true);
-        //     animator.SetBool("StopPaddle_Right", true);
-        // }
- 
-        if(Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.UpArrow))
         {
             PaddleForward(1);
+
+            animator.Play("row_right");
+            animator.Play("row_left");
         }
-        else if(Input.GetKey(KeyCode.DownArrow))
+        else if(Input.GetKeyDown(KeyCode.DownArrow))
         {
             PaddleForward(-1);
+
+            animator.Play("row_right");
+            animator.Play("row_left");
         }
-        
-        if(Input.GetKey(KeyCode.LeftArrow))
+
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
             PaddleTurn(-1);
+            animator.Play("row_left");
         }
-        else if(Input.GetKey(KeyCode.RightArrow))
+        else if(Input.GetKeyDown(KeyCode.RightArrow))
         {
             PaddleTurn(1);
+            animator.Play("row_right");
         }
     }
 
     private void PaddleForward(int pDir)
     {
         Vector3 paddleForce = this.transform.forward * PADDLE_POWER * pDir;
-        rb.AddForce(paddleForce);
+        rb.AddForce(paddleForce, ForceMode.Impulse);
+        //rb.velocity += paddleForce;
     }
 
     private void PaddleTurn(int pDir)
