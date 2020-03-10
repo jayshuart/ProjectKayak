@@ -592,6 +592,7 @@ GameObject:
   - component: {fileID: 1860078609}
   - component: {fileID: 1860078610}
   - component: {fileID: 1860078611}
+  - component: {fileID: 1860078612}
   m_Layer: 0
   m_Name: PlayerBoat
   m_TagString: Untagged
@@ -644,8 +645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304cc17f159622840b2ef61a7fbab94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PADDLE_POWER: 5
-  PADDLE_TURN_POWER: 2
+  PADDLE_POWER: 10
+  PADDLE_TURN_POWER: 30
 --- !u!95 &1860078611
 Animator:
   serializedVersion: 3
@@ -665,6 +666,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1860078612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707687208729941159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a344b78c73edbad45b84d7ac165ec425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event_SwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  event_SwipeRight:
+    m_PersistentCalls:
+      m_Calls: []
+  event_SwipeUp:
+    m_PersistentCalls:
+      m_Calls: []
+  event_SwipeDown:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4707687208975851183
 GameObject:
   m_ObjectHideFlags: 0
