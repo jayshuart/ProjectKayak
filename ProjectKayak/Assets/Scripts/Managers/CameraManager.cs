@@ -27,7 +27,7 @@ public class CameraManager : MonoBehaviour
         activeIndex = System.Array.IndexOf(cameras, activeCamera);
     }
 
-    private void CycleCamera()
+    public void CycleCamera()
     {
         //disable current camera
         activeCamera.enabled = false;

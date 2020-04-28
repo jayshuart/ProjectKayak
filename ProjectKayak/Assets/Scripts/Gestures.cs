@@ -5,20 +5,10 @@ using UnityEngine.Events;
 
 public class Gestures : MonoBehaviour
 {
-    public enum GESTURE_TYPE
-    {
-        UNSET,
-        SWIPE_DOWN,
-        SWIPE_UP,
-        SWIPE_LEFT,
-        SWIPE_RIGHT,
-        TAP,
-        TAP_DOUBLE
-    }
     private Vector2 inputStart;
     private Vector2 inputEnd;
     private bool gestureStarted;
-    private const float MIN_SWIPE_LENGTH = 150;
+    private const float MIN_SWIPE_LENGTH = 100;
 
     //screen zone properties
     private float SCREEN_CENTER_X = Screen.width / 2;
